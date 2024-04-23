@@ -1,5 +1,11 @@
+@import url('./assets/background_image.jpeg');
+
 *{
   padding: 0;
   border: 0;
   box-sizing: border-box;
+}
+
+body{
+  background-image: url('./assets/background_image.jpeg');
 }
