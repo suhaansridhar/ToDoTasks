@@ -20,7 +20,7 @@ function ToDo({ tasks, addTask, removeTask }) {
             {tasks.map((task) => (
               <li key={task.id} className="tasks--items">
                 <h3>{task.text}</h3>
-                <button onClick={() => removeTask(task.id)}>Remove Task</button>
+                <button onClick={() => removeTask(task.id)}>Remove</button>
               </li>
             ))}
           </ul>

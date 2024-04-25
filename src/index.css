@@ -1,6 +1,9 @@
 body{
-  background-color: bisque;
-  color: black;
+  background-image: url("/src/assets/background_image.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 100vh;
 }
 
 
@@ -29,20 +32,27 @@ body{
   border-radius: 1rem 0 0 1rem;
   outline: none;
   flex-grow: 2;
+  background-color: inherit;
+  color: white;
+  font-size: 1rem;
 }
 
 .todo--container--input button{
   border-top: 0.1rem solid black;
   border-bottom: 0.1rem solid black;
   border-right: 0.1rem solid black;
+  border-left: 0;
   padding: 1rem;
   border-radius: 0 1rem 1rem 0;
   background-color: white;
   flex-grow: 0;
+  color: white;
+  background-color: inherit;
+  font-size: 1rem;
 }
 
 input::placeholder{
-  color: black;
+  color: white;
 }
 
 .tasks--items{
@@ -52,9 +62,10 @@ input::placeholder{
 }
 
 .tasks--items button{
-  background-color: white;
-  color: black;
+  background-color: inherit;
   border-radius: 1rem;
   border: 0.1rem solid black;
   cursor: pointer;
+  color: white;
+  font-size: 1rem;
 }
