@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { addTask, removeTask } from "./ToDoActionCreator";
 import { connect } from "react-redux";
 
 function ToDo({ tasks, addTask, removeTask }) {
   const [taskName, setTaskName] = useState("");
+  const inputRef = useRef(null);
 
   function handleSubmit() {
     if (taskName.trim() !== "") {
       addTask(taskName.trim());
       setTaskName("");
+      inputRef.current.focus();
+    }
+  }
+
+  function handleKeyPress(event){
+    if(event.key === "Enter"){
+      handleSubmit();
     }
   }
 
@@ -26,7 +34,7 @@ function ToDo({ tasks, addTask, removeTask }) {
           </ul>
         </div>
       </div>
-
+  
         <br /><br /><br />
 
       <div className="todo--container--adding--tasks">
@@ -36,7 +44,10 @@ function ToDo({ tasks, addTask, removeTask }) {
             placeholder="Enter the Task"
             value={taskName}
             onChange={(e) => setTaskName(e.target.value)}
+            ref={inputRef}
+            autoFocus
             className="todo--container--input--text"
+            onKeyPress={handleKeyPress}
             />
             <button onClick={handleSubmit}>Add Task</button>
         </div>

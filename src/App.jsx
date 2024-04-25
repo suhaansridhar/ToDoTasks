@@ -6,7 +6,6 @@ function App(){
   return(
     <Provider store = {store}>
       <div>
-        <h1>ToDo Application</h1>
           <ToDo />
       </div>
     </Provider>
