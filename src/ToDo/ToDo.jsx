@@ -14,6 +14,21 @@ function ToDo({ tasks, addTask, removeTask }) {
 
   return (
     <div className="todo--container">
+      <div className="todo--container--tasks">
+        <div className="todo--container--displaying--tasks">
+          <ul>
+            {tasks.map((task) => (
+              <li key={task.id} className="tasks--items">
+                <h3>{task.text}</h3>
+                <button onClick={() => removeTask(task.id)}>Remove Task</button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+        <br /><br /><br />
+
       <div className="todo--container--adding--tasks">
         <div className="todo--container--input">
             <input
@@ -25,19 +40,6 @@ function ToDo({ tasks, addTask, removeTask }) {
             />
             <button onClick={handleSubmit}>Add Task</button>
         </div>
-      </div>
-      <br />
-      <br />
-      <br />
-      <div className="todo--container--displaying--tasks">
-        <ul>
-          {tasks.map((task) => (
-            <li key={task.id}>
-              <h1>{task.text}</h1>
-              <button onClick={() => removeTask(task.id)}>Remove Task</button>
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
   );

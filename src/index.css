@@ -1,11 +1,60 @@
-@import url('./assets/background_image.jpeg');
-
-*{
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
+body{
+  background-color: bisque;
+  color: black;
 }
 
-body{
-  background-image: url('./assets/background_image.jpeg');
+
+.todo--container{
+  display: flex;
+  flex-direction: column;
+}
+
+.todo--container--tasks{
+  border: 0.1rem solid black;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.todo--container--input{
+  display: flex;
+  width: 100%;
+}
+
+.todo--container--input input{
+  border-top: 0.1rem solid black;
+  border-left: 0.1rem solid black;
+  border-bottom: 0.1rem solid black;
+  border-right: 0.1rem solid black;
+  padding: 1rem;
+  border-radius: 1rem 0 0 1rem;
+  outline: none;
+  flex-grow: 2;
+}
+
+.todo--container--input button{
+  border-top: 0.1rem solid black;
+  border-bottom: 0.1rem solid black;
+  border-right: 0.1rem solid black;
+  padding: 1rem;
+  border-radius: 0 1rem 1rem 0;
+  background-color: white;
+  flex-grow: 0;
+}
+
+input::placeholder{
+  color: black;
+}
+
+.tasks--items{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.tasks--items button{
+  background-color: white;
+  color: black;
+  border-radius: 1rem;
+  border: 0.1rem solid black;
+  cursor: pointer;
 }
